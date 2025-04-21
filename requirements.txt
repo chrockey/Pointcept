@@ -1,0 +1,34 @@
+# PyTorch Geometric and related packages
+--find-links https://data.pyg.org/whl/torch-2.5.0+cu124.html
+torch-cluster
+torch-scatter
+torch-sparse
+torch-geometric
+
+# CUDA specific packages
+spconv-cu124
+
+# Core packages
+h5py
+pyyaml
+tensorboard
+tensorboardx
+wandb
+yapf
+addict
+einops
+scipy
+plyfile
+termcolor
+timm
+ftfy
+regex
+tqdm
+matplotlib
+black
+open3d
+
+# Git repositories
+git+https://github.com/octree-nn/ocnn-pytorch.git
+git+https://github.com/openai/CLIP.git
+git+https://github.com/Dao-AILab/flash-attention.git 
