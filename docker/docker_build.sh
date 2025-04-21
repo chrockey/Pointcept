@@ -54,7 +54,7 @@ docker build \
     -f docker/Dockerfile .
 
 # Test docker
-if ! docker run --gpus all -it --rm "$TAG" python -c "import torch; import spconv; print(f'CUDA available: {torch.cuda.is_available()}\nspconv version: {spconv.__version__}');"; then
+if ! docker run --gpus all -it --rm "$TAG" python -c "import torch; import spconv; import pointops; import pointgroup_ops; print(f'CUDA available: {torch.cuda.is_available()}\nspconv version: {spconv.__version__}');"; then
     echo "Docker test failed"
     exit 1
 fi

@@ -85,8 +85,8 @@ COPY ./libs/pointops /workspace/libs/pointops
 COPY ./libs/pointgroup_ops /workspace/libs/pointgroup_ops
 
 # Install local packages
-RUN pip install -e ./libs/pointops
-RUN pip install -e ./libs/pointgroup_ops
+RUN pip install ./libs/pointops
+RUN pip install ./libs/pointgroup_ops
 
 # Set shell to zsh for user
 RUN chsh -s /usr/bin/zsh user
