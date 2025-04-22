@@ -113,7 +113,7 @@ transform = [
     dict(type="Copy", keys_dict={"coord": "origin_coord"}),
     dict(
         type="MultiViewGenerator",
-        view_keys=("coord", "origin_coord", "color", "normal"),
+        view_keys=("coord", "origin_coord", "color"),
         global_view_num=2,
         global_view_scale=(0.4, 1.0),
         local_view_num=4,
@@ -194,8 +194,46 @@ data = dict(
             # ScanNet
             dict(
                 type="ScanNetDataset",
-                split=["train", "val", "test"],
+                split=["train"],
                 data_root="/datasets2/pointcept/scannet_hf",
+                transform=transform,
+                test_mode=False,
+                loop=1,
+            ),
+            # ScanNet++
+            dict(
+                type="ScanNetPPDataset",
+                split=[
+                    "train_grid1mm_chunk6x6_stride3x3",
+                ],
+                data_root="/datasets2/pointcept/scannetpp_hf",
+                transform=transform,
+                test_mode=False,
+                loop=1,
+            ),
+            # ArkitScenes
+            dict(
+                type="DefaultDataset",
+                split=["Training"],
+                data_root="/datasets2/pointcept/arkitscenes_hf",
+                transform=transform,
+                test_mode=False,
+                loop=1,
+            ),
+            # Matterport3D
+            dict(
+                type="Matterport3DDataset",
+                split=["train"],
+                data_root="/datasets2/mosaic3d/matterport_3d",
+                transform=transform,
+                test_mode=False,
+                loop=1,
+            ),
+            # Structured3D
+            dict(
+                type="Structured3DDataset",
+                split=["train"],
+                data_root="/datasets2/pointcept/structured3d_hf",
                 transform=transform,
                 test_mode=False,
                 loop=1,
