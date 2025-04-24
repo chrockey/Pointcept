@@ -6,8 +6,8 @@ Dataset: ScanNet v2, ScanNet++, S3DIS, HM3D, ArkitScene, Structured3D
 _base_ = ["../_base_/default_runtime.py"]
 
 # misc custom setting
-batch_size = 24  # bs: total bs in all gpus
-num_worker = 24
+batch_size = 12  # bs: total bs in all gpus
+num_worker = 12
 mix_prob = 0
 clip_grad = 3.0
 empty_cache = False
@@ -80,7 +80,7 @@ model = dict(
 
 # scheduler settings
 epoch = 300 # default: 200
-base_lr = 0.001 # 0.004 for 96 bs
+base_lr = 0.0005 # 0.004 for 96 bs
 lr_decay = 0.9  # layer-wise lr decay
 
 base_wd = 0.04  # wd scheduler enable in hooks
