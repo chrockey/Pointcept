@@ -163,7 +163,7 @@ transform = [
             # dict(type="ChromaticJitter", p=0.95, std=0.05),
             dict(type="NormalizeColor"),
         ],
-        max_size=65536,
+        max_size=32768,
     ),
     dict(type="ToTensor"),
     dict(type="Update", keys_dict={"grid_size": 0.02}),
