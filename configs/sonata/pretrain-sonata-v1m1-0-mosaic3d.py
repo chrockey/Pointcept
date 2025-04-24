@@ -79,7 +79,7 @@ model = dict(
 )
 
 # scheduler settings
-epoch = 200
+epoch = 300 # default: 200
 base_lr = 0.001 # 0.004 for 96 bs
 lr_decay = 0.9  # layer-wise lr decay
 
