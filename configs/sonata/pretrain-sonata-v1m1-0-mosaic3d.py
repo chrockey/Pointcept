@@ -80,6 +80,7 @@ model = dict(
 
 # scheduler settings
 epoch = 75 # 39769 / 26313 * 200 / 4 = 75.569... default: 200
+eval_epoch = 15
 base_lr = 0.004
 lr_decay = 0.9  # layer-wise lr decay
 
